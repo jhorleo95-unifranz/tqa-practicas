@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.0 on win32)" generated="2026-06-01T18:21:55.517846" rpa="false" schemaversion="5">
+<suite id="s1" name="Practica3" source="F:\Users\Leonidas\Downloads\tqa practicas\robot_project\tests\practica3.robot">
+<test id="s1-t1" name="Ejercicio 1 - Login Correcto" line="11">
+<kw name="Abrir Navegador Y Maximizar" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:21:55.779659" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T18:21:55.779206" elapsed="4.189794"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T18:21:59.969242" elapsed="0.033355"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-06-01T18:22:00.002833" elapsed="0.001096"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:21:55.778489" elapsed="4.225555"/>
+</kw>
+<kw name="Navegar A Pagina De Login" owner="common_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:00.005180" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Signup / Login')]'.</msg>
+<arg>xpath=//a[contains(text(), 'Signup / Login')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:00.004760" elapsed="1.634248"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=[data-qa='login-email']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T18:22:01.639201" elapsed="0.013977"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:22:00.004443" elapsed="1.648874"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:01.653953" level="INFO">Typing text 'leonidas_test_qa@example.com' into text field 'css=[data-qa='login-email']'.</msg>
+<arg>css=[data-qa='login-email']</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:01.653616" elapsed="0.087812"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:01.742144" level="INFO">Typing text 'Test1234' into text field 'css=[data-qa='login-password']'.</msg>
+<arg>css=[data-qa='login-password']</arg>
+<arg>${VALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:01.741815" elapsed="0.054145"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:01.796616" level="INFO">Clicking element 'css=[data-qa='login-button']'.</msg>
+<arg>css=[data-qa='login-button']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:01.796307" elapsed="0.044318"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:03.709597" level="INFO">Element 'xpath=//a[contains(text(), 'Logged in as')]' is displayed.</msg>
+<arg>xpath=//a[contains(text(), 'Logged in as')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T18:22:01.840940" elapsed="1.868751"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:03.721238" level="INFO">Current page contains text 'Logged in as'.</msg>
+<arg>Logged in as</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-01T18:22:03.709978" elapsed="0.011378"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:03.853989" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ejercicio1_login_correcto.png"&gt;&lt;img src="../screenshots/ejercicio1_login_correcto.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/screenshots/ejercicio1_login_correcto.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-01T18:22:03.721673" elapsed="0.132462"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T18:22:03.854942" elapsed="2.122898"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:22:03.854639" elapsed="2.123335"/>
+</kw>
+<doc>Verifica el inicio de sesión con credenciales válidas.</doc>
+<status status="PASS" start="2026-06-01T18:21:55.777697" elapsed="10.200530"/>
+</test>
+<test id="s1-t2" name="Ejercicio 2 - Login Incorrecto" line="25">
+<kw name="Abrir Navegador Y Maximizar" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:05.979666" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T18:22:05.979409" elapsed="2.606609"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T18:22:08.586238" elapsed="0.046715"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-06-01T18:22:08.633229" elapsed="0.001290"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:22:05.979169" elapsed="2.655461"/>
+</kw>
+<kw name="Navegar A Pagina De Login" owner="common_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:08.635582" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Signup / Login')]'.</msg>
+<arg>xpath=//a[contains(text(), 'Signup / Login')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:08.635363" elapsed="2.061565"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=[data-qa='login-email']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T18:22:10.697131" elapsed="0.014597"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:22:08.635022" elapsed="2.076826"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:10.712424" level="INFO">Typing text 'correo_invalido@example.com' into text field 'css=[data-qa='login-email']'.</msg>
+<arg>css=[data-qa='login-email']</arg>
+<arg>${INVALID_EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:10.712112" elapsed="0.067252"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:10.780046" level="INFO">Typing text 'ClaveFalsa123' into text field 'css=[data-qa='login-password']'.</msg>
+<arg>css=[data-qa='login-password']</arg>
+<arg>${INVALID_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:10.779713" elapsed="0.064382"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:10.844743" level="INFO">Clicking element 'css=[data-qa='login-button']'.</msg>
+<arg>css=[data-qa='login-button']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:10.844437" elapsed="2.265813"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:13.122635" level="INFO">Element 'xpath=//p[contains(text(), 'Your email or password is incorrect!')]' is displayed.</msg>
+<arg>xpath=//p[contains(text(), 'Your email or password is incorrect!')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T18:22:13.110613" elapsed="0.012120"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:13.132317" level="INFO">Current page contains text 'Your email or password is incorrect!'.</msg>
+<arg>Your email or password is incorrect!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-06-01T18:22:13.123077" elapsed="0.009336"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:13.197310" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ejercicio2_login_incorrecto.png"&gt;&lt;img src="../screenshots/ejercicio2_login_incorrecto.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/screenshots/ejercicio2_login_incorrecto.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-01T18:22:13.132708" elapsed="0.064755"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T18:22:13.198319" elapsed="2.126236"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:22:13.198032" elapsed="2.126803"/>
+</kw>
+<doc>Verifica que el sistema muestre error con credenciales inválidas.</doc>
+<status status="PASS" start="2026-06-01T18:22:05.978719" elapsed="9.346381"/>
+</test>
+<test id="s1-t3" name="Ejercicio 3 - Busqueda De Productos" line="39">
+<kw name="Abrir Navegador Y Maximizar" owner="common_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:15.326320" level="INFO">Opening browser 'chrome' to base url 'https://automationexercise.com'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-06-01T18:22:15.326144" elapsed="2.813253"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-06-01T18:22:18.139596" elapsed="0.039698"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>10 seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2026-06-01T18:22:18.179490" elapsed="0.000837"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:22:15.325921" elapsed="2.854484"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:18.180884" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Products')]'.</msg>
+<arg>xpath=//a[contains(text(), 'Products')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:18.180636" elapsed="3.109645"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=search_product</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T18:22:21.290702" elapsed="0.017191"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:21.308747" level="INFO">Typing text 'Shirt' into text field 'id=search_product'.</msg>
+<arg>id=search_product</arg>
+<arg>${SEARCH_TERM}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:21.308264" elapsed="0.074561"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:21.383778" level="INFO">Clicking element 'id=submit_search'.</msg>
+<arg>id=submit_search</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-06-01T18:22:21.383269" elapsed="2.022574"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Searched Products</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-06-01T18:22:23.406147" elapsed="0.008406"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:23.427831" level="INFO">Element 'css=h2.title.text-center' is displayed.</msg>
+<arg>css=h2.title.text-center</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2026-06-01T18:22:23.414872" elapsed="0.013098"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2026-06-01T18:22:23.546253" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/ejercicio3_busqueda_productos.png"&gt;&lt;img src="../screenshots/ejercicio3_busqueda_productos.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${EXECDIR}/screenshots/ejercicio3_busqueda_productos.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2026-06-01T18:22:23.428326" elapsed="0.118031"/>
+</kw>
+<kw name="Cerrar Navegador" owner="common_keywords" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-06-01T18:22:23.547025" elapsed="2.121264"/>
+</kw>
+<status status="PASS" start="2026-06-01T18:22:23.546779" elapsed="2.121651"/>
+</kw>
+<doc>Verifica la búsqueda de productos en el catálogo.</doc>
+<status status="PASS" start="2026-06-01T18:22:15.325514" elapsed="10.343169"/>
+</test>
+<doc>Práctica 3 - Robot Framework (Ejercicios 1, 2 y 3)</doc>
+<status status="PASS" start="2026-06-01T18:21:55.519279" elapsed="30.150084"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Practica3" id="s1" pass="3" fail="0" skip="0">Practica3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
