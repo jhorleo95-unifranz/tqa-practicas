@@ -1,0 +1,62 @@
+﻿{
+  "id": "e3b0c442-989b-464c-8693-123456789012",
+  "version": "2.0",
+  "name": "Practica 1 - Selenium IDE",
+  "url": "https://automationexercise.com",
+  "tests": [
+    {
+      "id": "5fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "name": "Ejercicio 2 - Inicio de Sesión Correcto",
+      "commands": [
+        { "id": "c1", "command": "open", "target": "/", "targets": [], "value": "" },
+        { "id": "c2", "command": "click", "target": "xpath=//a[contains(text(), 'Signup / Login')]", "targets": [], "value": "" },
+        { "id": "c3", "command": "type", "target": "css=[data-qa='login-email']", "targets": [], "value": "leonidas_test_qa@example.com" },
+        { "id": "c4", "command": "type", "target": "css=[data-qa='login-password']", "targets": [], "value": "Test1234" },
+        { "id": "c5", "command": "click", "target": "css=[data-qa='login-button']", "targets": [], "value": "" },
+        { "id": "c6", "command": "assertElementPresent", "target": "xpath=//a[contains(text(), 'Logged in as')]", "targets": [], "value": "" }
+      ]
+    },
+    {
+      "id": "7b8c2914-1234-4562-b3fc-2c963f66afa7",
+      "name": "Ejercicio 3 - Inicio de Sesión Incorrecto",
+      "commands": [
+        { "id": "c11", "command": "open", "target": "/", "targets": [], "value": "" },
+        { "id": "c12", "command": "click", "target": "xpath=//a[contains(text(), 'Signup / Login')]", "targets": [], "value": "" },
+        { "id": "c13", "command": "type", "target": "css=[data-qa='login-email']", "targets": [], "value": "correo_falso_invalido@example.com" },
+        { "id": "c14", "command": "type", "target": "css=[data-qa='login-password']", "targets": [], "value": "claveIncorrecta" },
+        { "id": "c15", "command": "click", "target": "css=[data-qa='login-button']", "targets": [], "value": "" },
+        { "id": "c16", "command": "assertElementPresent", "target": "xpath=//p[contains(text(), 'Your email or password is incorrect!')]", "targets": [], "value": "" }
+      ]
+    },
+    {
+      "id": "8d9e3025-5678-4562-b3fc-2c963f66afa8",
+      "name": "Ejercicio 4 - Búsqueda de Productos",
+      "commands": [
+        { "id": "c21", "command": "open", "target": "/", "targets": [], "value": "" },
+        { "id": "c22", "command": "click", "target": "xpath=//a[contains(text(), 'Products')]", "targets": [], "value": "" },
+        { "id": "c23", "command": "type", "target": "id=search_product", "targets": [], "value": "Shirt" },
+        { "id": "c24", "command": "click", "target": "id=submit_search", "targets": [], "value": "" },
+        { "id": "c25", "command": "assertElementPresent", "target": "xpath=//h2[contains(text(), 'Searched Products')]", "targets": [], "value": "" },
+        { "id": "c26", "command": "assertElementPresent", "target": "css=.productinfo", "targets": [], "value": "" }
+      ]
+    }
+  ],
+  "suites": [
+    {
+      "id": "a9f8c442-989b-464c-8693-123456789012",
+      "name": "Suite Practica 1",
+      "persistSession": false,
+      "parallel": false,
+      "timeout": 300,
+      "tests": [
+        "5fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "7b8c2914-1234-4562-b3fc-2c963f66afa7",
+        "8d9e3025-5678-4562-b3fc-2c963f66afa8"
+      ]
+    }
+  ],
+  "urls": [
+    "https://automationexercise.com/"
+  ],
+  "plugins": []
+}
